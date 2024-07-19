@@ -1,10 +1,8 @@
-from dishka import FromDishka
-
-from src.core.ports.helloworldport import HelloWorldInterface
+from src.infrastructure.HelloWorldModule.main import HelloWorld
 
 
 class Application:
-    def __init__(self, hello_world: FromDishka[HelloWorldInterface]) -> None:
+    def __init__(self, hello_world: HelloWorld) -> None:
         self.hello_world = hello_world
 
     def run(self) -> None:

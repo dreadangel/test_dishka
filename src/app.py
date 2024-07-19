@@ -1,12 +1,12 @@
-from dishka import make_async_container
-
 from src.core.appication import Application
-from src.ioc import AdapterProvider
+from src.infrastructure.HelloWorldModule.main import HelloWorld
 
 
 async def main() -> None:
 
     try:
-        ...
+        hello_world_module = HelloWorld()
+        application = Application(hello_world=hello_world_module)
+        application.run()
     finally:
         ...
