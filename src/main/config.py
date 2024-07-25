@@ -14,4 +14,3 @@ class ConfigHelloWorldModule:
 @dataclasses.dataclass(slots=True)
 class Config:
     configuration_module = ConfigConfigurationModule()
-    hello_world_module = ConfigHelloWorldModule()
