@@ -1,3 +1,5 @@
+import asyncio
+
 import structlog
 
 from Tasks.src.main.config import Config
@@ -10,13 +12,8 @@ class Worker:
         self.status = False
         self.name: str = config.worker_name
 
-    async def stat(self) -> None:
+    async def run(self) -> None:
         self.status = True
         await logger.adebug("Worker started", worker_name=self.name)
-
-    async def stop(self) -> None:
-        self.status = False
-        await logger.adebug("Worker stopped", worker_name=self.name)
-
-    async def status(self) -> bool:
-        return self.status
+        await asyncio.sleep(10)
+        await logger.adebug("Worker finish", worker_name=self.name)

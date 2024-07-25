@@ -1,4 +1,3 @@
-import anyio
 import uvicorn
 
 from Tasks.src.interface.FastAPI_.main import create_app
